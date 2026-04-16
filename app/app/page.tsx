@@ -4,21 +4,27 @@ export default function Page() {
   return (
     <main
       style={{
-        background: "linear-gradient(135deg, #FFE9AE, #B4F4FF, #FFB4E6)",
+        background: "linear-gradient(135deg, #1E3A8A, #3B82F6, #93C5FD)",
+        minHeight: "100vh",
         padding: "40px",
         fontFamily: "Arial, sans-serif",
+        color: "#0B1F3A",
       }}
     >
       <h1
         style={{
-          fontSize: "48px",
+          fontSize: "52px",
           fontWeight: "900",
-          marginBottom: "20px",
-          color: "#222",
-          textShadow: "2px 2px 0px white",
+          marginBottom: "30px",
+          color: "#FACC15", // gold accent (lion vibe)
+          textShadow: "3px 3px 0px #0B1F3A",
         }}
       >
-        Hi! Welcome 6th, 7th, and 8th Graders!!
+        🦁 Welcome to the Lion Den!
+        <br />
+        <span style={{ fontSize: "28px", fontWeight: "600", color: "#E0F2FE" }}>
+          6th, 7th, and 8th Graders
+        </span>
       </h1>
 
       <div
@@ -28,76 +34,77 @@ export default function Page() {
           maxWidth: "600px",
         }}
       >
-        {/* 1. What We've Learned */}
+        {/* What We've Learned */}
         <Link
           href="/learned"
           style={{
             display: "block",
-            padding: "20px",
-            borderRadius: "12px",
-            backgroundColor: "#FFEB3B",
+            padding: "22px",
+            borderRadius: "14px",
+            backgroundColor: "#DBEAFE",
             fontWeight: "bold",
             fontSize: "22px",
-            color: "#333",
+            color: "#1E3A8A",
             textDecoration: "none",
+            boxShadow: "4px 4px 0px #1E3A8A",
           }}
         >
           📘 What We&apos;ve Learned
         </Link>
 
-        {/* 1. What We've Learned */}
+        {/* Check Understanding */}
         <Link
           href="/check"
           style={{
             display: "block",
-            padding: "20px",
-            borderRadius: "12px",
-            backgroundColor: "#FFA500",
+            padding: "22px",
+            borderRadius: "14px",
+            backgroundColor: "#93C5FD",
             fontWeight: "bold",
             fontSize: "22px",
-            color: "#333",
+            color: "#0B1F3A",
             textDecoration: "none",
+            boxShadow: "4px 4px 0px #1E40AF",
           }}
         >
           ✅ Check Your Understanding
         </Link>
 
-        {/* 2. Final Projects */}
+        {/* Final Projects */}
         <Link
           href="/projects"
           style={{
             display: "block",
-            padding: "20px",
-            borderRadius: "12px",
-            backgroundColor: "#E91E63",
+            padding: "22px",
+            borderRadius: "14px",
+            backgroundColor: "#2563EB",
             fontWeight: "bold",
             fontSize: "22px",
             color: "white",
             textDecoration: "none",
+            boxShadow: "4px 4px 0px #1E3A8A",
           }}
         >
-          🚀 Final Projects
+          🦁 Final Projects
         </Link>
 
-        {/* 3. About Our Community */}
-
-        {/* 5. How did Ms. Xu MAke This Website */}
+        {/* How Ms. Xu Made This */}
         <Link
           href="/how-to"
           style={{
             display: "block",
-            padding: "20px",
-            borderRadius: "12px",
-            backgroundColor: "#2196F3",
+            padding: "22px",
+            borderRadius: "14px",
+            backgroundColor: "#1E40AF",
             fontWeight: "bold",
             fontSize: "22px",
-            color: "white",
+            color: "#E0F2FE",
             textDecoration: "none",
+            boxShadow: "4px 4px 0px #0B1F3A",
           }}
         >
           🤔 How did Ms. Xu Make This Website?
         </Link>
-        <br></br>
       </div>
     </main>
   );

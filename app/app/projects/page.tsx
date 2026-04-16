@@ -26,6 +26,17 @@ const handyLinkStyle: React.CSSProperties = {
   border: "1px solid #ddd",
 };
 
+function shuffleArray<T>(array: T[]): T[] {
+  const copy = [...array];
+
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+
+  return copy;
+}
+
 export default function ProjectsPage() {
   const grades: Grade[] = ["8", "7", "6"];
   const [projects, setProjects] = useState<StudentProject[]>([]);
@@ -59,7 +70,6 @@ export default function ProjectsPage() {
     const data = await res.json();
     console.log("RESPONSE:", data);
 
-    // reload projects so UI updates
     await loadProjects();
   }
 
@@ -149,6 +159,8 @@ export default function ProjectsPage() {
 
         {grades.map((grade) => {
           const projectsForGrade = projects.filter((p) => p.grade === grade);
+          const topProjects = projectsForGrade.slice(0, 10);
+          const otherProjects = shuffleArray(projectsForGrade.slice(10));
 
           return (
             <section
@@ -174,7 +186,7 @@ export default function ProjectsPage() {
                   gap: "18px",
                 }}
               >
-                {projectsForGrade.map((project, index) => (
+                {topProjects.map((project, index) => (
                   <button
                     key={project.id}
                     onClick={() => handleProjectClick(project.id)}
@@ -188,7 +200,6 @@ export default function ProjectsPage() {
                       alignItems: "center",
                       width: "100%",
                       maxWidth: "400px",
-                      border: "2px solid #d7a928",
                       cursor: "pointer",
                     }}
                   >
@@ -230,7 +241,76 @@ export default function ProjectsPage() {
                     </div>
                   </button>
                 ))}
+
+                {otherProjects.map((project) => (
+                  <button
+                    key={project.id}
+                    onClick={() => handleProjectClick(project.id)}
+                    style={{
+                      background: "#fafafa",
+                      borderRadius: "16px",
+                      padding: "10px",
+                      boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      width: "100%",
+                      maxWidth: "400px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        marginBottom: "8px",
+                        fontWeight: 700,
+                        color: "#7a7a7a",
+                      }}
+                    >
+                      ⭐ Featured Project
+                    </div>
+
+                    <div
+                      style={{
+                        width: "100%",
+                        borderRadius: "12px",
+                        overflow: "hidden",
+                        border: "1px solid #ddd",
+                        marginBottom: "8px",
+                      }}
+                    >
+                      <StudentProjectSlider images={project.image_srcs} />
+                    </div>
+
+                    <div
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: 700,
+                        textAlign: "center",
+                        color: "#333",
+                      }}
+                    >
+                      {project.first_name}
+                    </div>
+                  </button>
+                ))}
               </div>
+
+              {projectsForGrade.length > 10 && (
+                <p
+                  style={{
+                    marginTop: "16px",
+                    color: "#666",
+                    fontSize: "14px",
+                    textAlign: "center",
+                  }}
+                >
+                  Only the top 10 projects in each grade show rankings and click
+                  totals.
+                </p>
+              )}
             </section>
           );
         })}

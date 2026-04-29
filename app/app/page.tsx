@@ -34,7 +34,7 @@ export default function Page() {
           maxWidth: "600px",
         }}
       >
-        {/* What We've Learned
+        {/* What We've Learned */}
         <Link
           href="/learned"
           style={{
@@ -50,7 +50,7 @@ export default function Page() {
           }}
         >
           📘 What We&apos;ve Learned
-        </Link> */}
+        </Link>
 
         {/* Check Understanding */}
         <Link

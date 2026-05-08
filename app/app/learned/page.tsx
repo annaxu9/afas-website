@@ -86,7 +86,7 @@ export default function LearnedPage() {
             }}
           >
             <a href="#paper-towers" style={handyLinkStyle}>
-              🏗️ Paper Towers
+              🏗️ Paper Tower Challenge
             </a>
             <a href="#problem-solving" style={handyLinkStyle}>
               🧠 Problem Solving Probess
@@ -131,19 +131,16 @@ export default function LearnedPage() {
             🏗️ Paper Tower Challenge
           </h2>
           <p>
-            We started the year with a hands–on engineering challenge: build the
-            tallest paper tower possible using only paper and tape! Everyone did
+            We started Quarter 3 with a hands–on engineering challenge: build the
+            tallest paper tower using only paper and tape! Everyone did
             an awesome job and showed creativity, teamwork, and persistence.
           </p>
+          <p>Yasmim, Cece, and Isabella in 7th Grade built the highest tower at 59 inches!</p>
 
           <PaperTowerSlider />
 
           <p>
-            The final winner is still a little bit disputed! Mason, Jakhari, and
-            Jaden&apos;s group built a tower that measured{" "}
-            <strong>55 inches</strong>, while Sarah, Izzy, and Callie&apos;s
-            group may have reached <strong>around 56 inches</strong>. We&apos;ll
-            call it a tie! Great job to everyone who participated!
+            
           </p>
 
           <hr

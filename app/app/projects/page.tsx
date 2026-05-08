@@ -159,8 +159,7 @@ export default function ProjectsPage() {
 
         {grades.map((grade) => {
           const projectsForGrade = projects.filter((p) => p.grade === grade);
-          const topProjects = projectsForGrade.slice(0, 10);
-          const otherProjects = shuffleArray(projectsForGrade.slice(10));
+          const topProjects = projectsForGrade;
 
           return (
             <section
@@ -242,75 +241,9 @@ export default function ProjectsPage() {
                   </button>
                 ))}
 
-                {otherProjects.map((project) => (
-                  <button
-                    key={project.id}
-                    onClick={() => handleProjectClick(project.id)}
-                    style={{
-                      background: "#fafafa",
-                      borderRadius: "16px",
-                      padding: "10px",
-                      boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      width: "100%",
-                      maxWidth: "400px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: "100%",
-                        display: "flex",
-                        justifyContent: "center",
-                        marginBottom: "8px",
-                        fontWeight: 700,
-                        color: "#7a7a7a",
-                      }}
-                    >
-                      ⭐ Featured Project
-                    </div>
-
-                    <div
-                      style={{
-                        width: "100%",
-                        borderRadius: "12px",
-                        overflow: "hidden",
-                        border: "1px solid #ddd",
-                        marginBottom: "8px",
-                      }}
-                    >
-                      <StudentProjectSlider images={project.image_srcs} />
-                    </div>
-
-                    <div
-                      style={{
-                        fontSize: "16px",
-                        fontWeight: 700,
-                        textAlign: "center",
-                        color: "#333",
-                      }}
-                    >
-                      {project.first_name}
-                    </div>
-                  </button>
-                ))}
               </div>
 
-              {projectsForGrade.length > 10 && (
-                <p
-                  style={{
-                    marginTop: "16px",
-                    color: "#666",
-                    fontSize: "14px",
-                    textAlign: "center",
-                  }}
-                >
-                  Only the top 10 projects in each grade show rankings and click
-                  totals.
-                </p>
-              )}
+
             </section>
           );
         })}

@@ -186,7 +186,7 @@ export default function ProjectsPage() {
                 }}
               >
                 {topProjects.map((project, index) => (
-                  <button
+                  <div
                     key={project.id}
                     onClick={() => handleProjectClick(project.id)}
                     style={{
@@ -238,12 +238,9 @@ export default function ProjectsPage() {
                     >
                       {project.first_name}
                     </div>
-                  </button>
+                  </div>
                 ))}
-
               </div>
-
-
             </section>
           );
         })}

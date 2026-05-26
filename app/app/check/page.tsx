@@ -183,35 +183,6 @@ const QUESTIONS: Question[] = [
     correctIndex: 1,
   },
   {
-    id: "input-role",
-    prompt: "Which part brings information INTO the computer?",
-    imageSrc: "/images/input_island.png",
-    imageAlt: "Input Island from the play",
-    choices: ["Output", "Processing", "Input", "Storage"],
-    correctIndex: 2,
-  },
-  {
-    id: "output-role",
-    prompt: "Which part shows the results of what the computer did?",
-    imageSrc: "/images/output_ocean.png",
-    imageAlt: "Output Ocean from the play",
-    choices: ["Output", "Input", "Variable", "CPU"],
-    correctIndex: 0,
-  },
-  {
-    id: "bug-play",
-    prompt: "In our classroom play, what caused the computer to break?",
-    imageSrc: "/images/bug_play.png",
-    imageAlt: "Bug character",
-    choices: [
-      "The function was too long",
-      "The variable had the wrong value",
-      "The CPU was missing",
-      "The storage was full",
-    ],
-    correctIndex: 1,
-  },
-  {
     id: "ps-define",
     prompt:
       "In the Problem-Solving Process, which step asks: 'What is the problem?'",
@@ -390,15 +361,6 @@ const QUESTIONS: Question[] = [
       "Debugging websites",
     ],
     correctIndex: 0,
-  },
-  {
-    id: "play-processing",
-    prompt:
-      "In our classroom play, which character was the 'brain' that followed instructions?",
-    imageSrc: "/images/processing_character.png",
-    imageAlt: "Processing character",
-    choices: ["Output", "Processing", "Input", "Bug"],
-    correctIndex: 1,
   },
   {
     id: "coding-definition",

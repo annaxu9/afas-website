@@ -2,6 +2,14 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import type { CSSProperties } from "react";
+
+const imageStyle: CSSProperties = {
+  width: "100%",
+  height: "auto",
+  borderRadius: "12px",
+  objectFit: "cover",
+};
 
 const firstRowImages = ["/images/paper_1.png", "/images/paper_2.png"];
 
@@ -11,13 +19,6 @@ const remainingMainImages = Array.from(
 );
 
 const additionalPaperImages = ["/images/paper_7.png", "/images/paper_8.png"];
-
-const imageStyle = {
-  width: "100%",
-  height: "auto",
-  borderRadius: "12px",
-  objectFit: "contain",
-};
 
 const gridStyle = {
   display: "grid",
@@ -64,7 +65,7 @@ export function PaperTowerSlider() {
                 width={1000}
                 height={1000}
                 src={src}
-                alt={`Paper tower photo ${index + 3}`}
+                alt={`Paper tower photo ${index + 7}`}
                 style={imageStyle}
                 unoptimized
               />

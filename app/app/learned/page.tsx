@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { PaperTowerSlider } from "../components/PaperTowerSlider";
+import Image from "next/image";
 
 const handyLinkStyle: React.CSSProperties = {
   padding: "8px 14px",
@@ -11,6 +14,11 @@ const handyLinkStyle: React.CSSProperties = {
   fontWeight: 600,
   border: "1px solid #ddd",
 };
+
+const lesson6Images = Array.from(
+  { length: 5 },
+  (_, i) => `/images/lesson6-${i + 1}.png`,
+);
 
 export default function LearnedPage() {
   return (
@@ -131,18 +139,16 @@ export default function LearnedPage() {
             🏗️ Paper Tower Challenge
           </h2>
           <p>
-            We started Quarter 3 with a hands–on engineering challenge: build the
-            tallest paper tower using only paper and tape! Everyone did
-            an awesome job and showed creativity, teamwork, and persistence.
+            We started Quarter 3 with a hands–on engineering challenge: build
+            the tallest paper tower using only paper and tape! Everyone did an
+            awesome job and showed creativity, teamwork, and persistence.
           </p>
-          <p>Yasmim, Cece, and Isabella in 7th Grade built the highest tower at 59 inches!</p>
-
-          <PaperTowerSlider />
-
           <p>
-            
+            Yasmim, Cece, and Isabella in 7th Grade built the highest tower at
+            59 inches!
           </p>
-
+          <PaperTowerSlider />
+          <p></p>
           <hr
             style={{
               border: "0",
@@ -150,20 +156,17 @@ export default function LearnedPage() {
               margin: "30px 0", // vertical padding
             }}
           />
-
           <h2
             id="problem-solving"
             style={{ fontSize: "28px", fontWeight: 800, marginTop: "30px" }}
           >
             🧠 The Problem-Solving Process
           </h2>
-
           <p>
             Next, we learned about the steps engineers use to solve real-world
             problems. We watched a short video together and explored the four
             parts of the process.
           </p>
-
           {/* Side-by-side: image + steps */}
           <div
             style={{
@@ -222,7 +225,6 @@ export default function LearnedPage() {
               </ul>
             </div>
           </div>
-
           <h2
             style={{
               textAlign: "center",
@@ -231,7 +233,6 @@ export default function LearnedPage() {
           >
             Video:
           </h2>
-
           {/* Embedded YouTube Video with real dimensions */}
           <div
             style={{
@@ -255,7 +256,6 @@ export default function LearnedPage() {
               }}
             ></iframe>
           </div>
-
           <hr
             style={{
               border: "0",
@@ -263,15 +263,13 @@ export default function LearnedPage() {
               margin: "30px 0", // vertical padding
             }}
           />
-
           {/* Code.org Intro */}
           <h2
             id="code-org"
             style={{ fontSize: "28px", fontWeight: 800, marginTop: "30px" }}
           >
-            💻 Exploring Code.org
+            💻 Unit 1: Exploring Code.org (Games and Animations)
           </h2>
-
           <p>
             Then we jumped into{" "}
             <a
@@ -289,7 +287,6 @@ export default function LearnedPage() {
             — a website where you can learn to code by making games, art,
             animations, and music.
           </p>
-
           <hr
             style={{
               border: "0",
@@ -297,144 +294,368 @@ export default function LearnedPage() {
               margin: "30px 0", // vertical padding
             }}
           />
-
           {/* Lesson 3 */}
-          <h2
-            id="lesson3"
-            style={{ fontSize: "28px", fontWeight: 800, marginTop: "30px" }}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "32px",
+              marginTop: "30px",
+            }}
           >
-            ✏️ Lesson 3 — Drawing in Game Lab
-          </h2>
+            {/* Left side: lesson text */}
+            <div style={{ flex: 2 }}>
+              <h2
+                id="lesson3"
+                style={{ fontSize: "28px", fontWeight: 800, marginTop: 0 }}
+              >
+                ✏️ Lesson 3 — Drawing in Game Lab
+              </h2>
 
-          <p>
-            We explored the layout of Code.org Game Lab: the{" "}
-            <strong>workspace</strong>, the <strong>canvas/grid</strong>, the{" "}
-            <strong>toolbox</strong>, the <strong>Run Button</strong>, and the{" "}
-            <strong>Progress Bar</strong>.
-          </p>
+              <p>
+                We explored the layout of Code.org Game Lab: the{" "}
+                <strong>workspace</strong>, the <strong>canvas/grid</strong>,
+                the <strong>toolbox</strong>, the <strong>Run Button</strong>,
+                and the <strong>Progress Bar</strong>.
+              </p>
 
-          <p>
-            We learned that the Game Lab canvas is a{" "}
-            <strong>400 by 400 grid</strong>. Each little square is 50 units
-            that helps you measure where to draw things.
-          </p>
+              <p>
+                We learned that the Game Lab canvas is a{" "}
+                <strong>400 by 400 grid</strong>. Each little square is 50 units
+                that helps you measure where to draw things.
+              </p>
 
-          <p>We used functions like:</p>
+              <p>We used functions like:</p>
 
-          <ul style={{ paddingLeft: "25px" }}>
-            <li>
-              <code>rect()</code> — to draw rectangles
-            </li>
-            <li>
-              <code>ellipse()</code> — to draw circles and ovals
-            </li>
-            <li>
-              <code>fill()</code> — to change colors
-            </li>
-          </ul>
+              <ul style={{ paddingLeft: "25px" }}>
+                <li>
+                  <code>rect()</code> — to draw rectangles
+                </li>
+                <li>
+                  <code>ellipse()</code> — to draw circles and ovals
+                </li>
+                <li>
+                  <code>fill()</code> — to change colors
+                </li>
+              </ul>
 
-          <p style={{ fontWeight: "bold", color: "#000" }}>
-            👉 We learned that code order matters!
-          </p>
+              <p style={{ fontWeight: "bold", color: "#000" }}>
+                👉 We learned that code order matters!
+              </p>
+            </div>
 
+            {/* Right side: image */}
+            <div
+              style={{
+                flex: 1,
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Image
+                src="/images/lesson_3.png"
+                alt="Lesson 3 Drawing in Game Lab"
+                width={300}
+                height={300}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "12px",
+                }}
+                unoptimized
+              />
+            </div>
+          </div>
           <hr
             style={{
               border: "0",
-              borderTop: "4px solid #333", // bold line
-              margin: "30px 0", // vertical padding
+              borderTop: "4px solid #333",
+              margin: "30px 0",
             }}
           />
-
           {/* Lesson 4 */}
-          <h2
-            id="lesson4"
-            style={{ fontSize: "28px", fontWeight: 800, marginTop: "30px" }}
-          >
-            🔺 Lesson 4 — Shapes &amp; Parameters
-          </h2>
+          <div style={{ marginTop: "30px" }}>
+            <h2
+              id="lesson4"
+              style={{
+                fontSize: "28px",
+                fontWeight: 800,
+                marginBottom: "16px",
+              }}
+            >
+              🔺 Lesson 4 — Shapes &amp; Parameters
+            </h2>
 
-          <p>
-            We learned what <strong>parameters</strong> are — they are the{" "}
-            <strong>details</strong> you give a command so the computer knows
-            exactly what you want. Think of parameters like the instructions you
-            give when ordering something:
-          </p>
+            <p>
+              In Game Lab, we use code to tell the computer what to draw. But
+              the computer needs details, too!
+            </p>
 
-          <p>
-            <em>
-              “I want a rectangle at this spot, with this width, and this
-              height.”
-            </em>
-          </p>
+            <p>
+              Those details are called <strong>parameters</strong>. Parameters
+              tell the computer things like:
+            </p>
 
-          <p>For example, this block of code draws a rectangle:</p>
+            <ul style={{ paddingLeft: "25px", lineHeight: "1.8" }}>
+              <li>Where should the shape go?</li>
+              <li>How wide should it be?</li>
+              <li>How tall should it be?</li>
+            </ul>
 
-          <p>
-            <code>rect(100, 200, 50, 80);</code>
-          </p>
+            <p>For example, this code draws a rectangle:</p>
 
-          <p>Each number is a parameter:</p>
+            <div
+              style={{
+                background: "#f4f4f4",
+                borderRadius: "12px",
+                padding: "18px 22px",
+                margin: "18px 0",
+                fontSize: "22px",
+                fontWeight: "bold",
+                textAlign: "center",
+                fontFamily: "monospace",
+              }}
+            >
+              rect(
+              <span style={{ color: "#d62828" }}>100</span>,{" "}
+              <span style={{ color: "#1d4ed8" }}>200</span>,{" "}
+              <span style={{ color: "#15803d" }}>50</span>,{" "}
+              <span style={{ color: "#9333ea" }}>80</span>
+              );
+            </div>
 
-          <ul style={{ paddingLeft: "25px" }}>
-            <li>
-              <strong>100</strong> → how far across
-            </li>
-            <li>
-              <strong>200</strong> → how far down
-            </li>
-            <li>
-              <strong>50</strong> → width
-            </li>
-            <li>
-              <strong>80</strong> → height
-            </li>
-          </ul>
+            <p>Each number gives the computer one important instruction:</p>
 
-          <p>
-            When you change the parameters, you change the shape. That’s how you
-            control <strong>size, position, and color</strong> in your drawings!
-          </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                gap: "12px",
+                margin: "18px 0",
+              }}
+            >
+              <div
+                style={{
+                  background: "#fff1f2",
+                  borderRadius: "10px",
+                  padding: "14px",
+                }}
+              >
+                <strong style={{ color: "#d62828" }}>100</strong>
+                <div>
+                  Moves the rectangle across the screen. (Along the X Axis)
+                </div>
+              </div>
 
+              <div
+                style={{
+                  background: "#eff6ff",
+                  borderRadius: "10px",
+                  padding: "14px",
+                }}
+              >
+                <strong style={{ color: "#1d4ed8" }}>200</strong>
+                <div>
+                  Moves the rectangle down the screen. (Along the Y Axis)
+                </div>
+              </div>
+
+              <div
+                style={{
+                  background: "#f0fdf4",
+                  borderRadius: "10px",
+                  padding: "14px",
+                }}
+              >
+                <strong style={{ color: "#15803d" }}>50</strong>
+                <div>Sets the rectangle&apos;s width.</div>
+              </div>
+
+              <div
+                style={{
+                  background: "#faf5ff",
+                  borderRadius: "10px",
+                  padding: "14px",
+                }}
+              >
+                <strong style={{ color: "#9333ea" }}>80</strong>
+                <div>Sets the rectangle&apos;s height.</div>
+              </div>
+            </div>
+
+            <p
+              style={{
+                fontWeight: "bold",
+                background: "#fff7ed",
+                padding: "14px 18px",
+                borderRadius: "10px",
+                marginTop: "20px",
+              }}
+            >
+              👉 Change the parameters, and you change your drawing! You can
+              move shapes, make them bigger or smaller, and create your own
+              designs.
+            </p>
+          </div>
           <hr
             style={{
               border: "0",
-              borderTop: "4px solid #333", // bold line
-              margin: "30px 0", // vertical padding
+              borderTop: "4px solid #333",
+              margin: "30px 0",
             }}
           />
-
           {/* Lesson 5 */}
-          <h2
-            id="variables"
-            style={{ fontSize: "28px", fontWeight: 800, marginTop: "30px" }}
-          >
-            🔤 Lesson 5 — Variables
-          </h2>
+          <div style={{ marginTop: "30px" }}>
+            <h2
+              id="variables"
+              style={{
+                fontSize: "28px",
+                fontWeight: 800,
+                marginBottom: "16px",
+              }}
+            >
+              🔤 Lesson 5 — Variables
+            </h2>
 
-          <p>
-            We learned that a <strong>variable</strong> is like a{" "}
-            <strong>labeled box </strong>
-            that stores information. The value inside the box can{" "}
-            <strong>change</strong>.
-          </p>
+            <p>
+              In Game Lab, a <strong>variable</strong> is like a{" "}
+              <strong>labeled box</strong> that stores information.
+            </p>
 
-          <p>
-            For example, a variable might store your score, a color, or the size
-            of a shape. When the number or value changes, the program will
-            automatically use the new value.
-          </p>
+            <p>
+              The label tells us what is inside the box, and the value inside
+              can change while the program is running.
+            </p>
 
-          <p>
-            We also learned about <strong>functions</strong>. A function is a{" "}
-            <strong>set of instructions</strong> that does something — like a
-            mini-program you can reuse over and over. Functions help keep your
-            code neat, organized, and easy to read.
-          </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                gap: "12px",
+                margin: "20px 0",
+              }}
+            >
+              <div
+                style={{
+                  background: "#eff6ff",
+                  borderRadius: "10px",
+                  padding: "14px",
+                  textAlign: "center",
+                }}
+              >
+                <div style={{ fontSize: "24px", marginBottom: "6px" }}>🏆</div>
+                <strong>score</strong>
+                <div style={{ marginTop: "6px" }}>Stores points</div>
+              </div>
 
-          <p style={{ fontWeight: "bold", marginTop: "10px", color: "#000" }}>
-            👉 Variables store data. Functions do actions.
-          </p>
+              <div
+                style={{
+                  background: "#fef3c7",
+                  borderRadius: "10px",
+                  padding: "14px",
+                  textAlign: "center",
+                }}
+              >
+                <div style={{ fontSize: "24px", marginBottom: "6px" }}>🎨</div>
+                <strong>color</strong>
+                <div style={{ marginTop: "6px" }}>Stores a color</div>
+              </div>
 
+              <div
+                style={{
+                  background: "#f0fdf4",
+                  borderRadius: "10px",
+                  padding: "14px",
+                  textAlign: "center",
+                }}
+              >
+                <div style={{ fontSize: "24px", marginBottom: "6px" }}>📏</div>
+                <strong>size</strong>
+                <div style={{ marginTop: "6px" }}>Stores a number</div>
+              </div>
+            </div>
+
+            <p>For example, this variable stores a player&apos;s score:</p>
+
+            <div
+              style={{
+                background: "#f4f4f4",
+                borderRadius: "12px",
+                padding: "18px 22px",
+                margin: "18px 0",
+                fontSize: "22px",
+                fontWeight: "bold",
+                textAlign: "center",
+                fontFamily: "monospace",
+              }}
+            >
+              var <span style={{ color: "#1d4ed8" }}>score</span> ={" "}
+              <span style={{ color: "#15803d" }}>0</span>;
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                gap: "12px",
+                margin: "18px 0",
+              }}
+            >
+              <div
+                style={{
+                  background: "#eff6ff",
+                  borderRadius: "10px",
+                  padding: "14px",
+                }}
+              >
+                <strong style={{ color: "#1d4ed8" }}>score</strong>
+                <div>The name of the variable, or the label on the box.</div>
+              </div>
+
+              <div
+                style={{
+                  background: "#f0fdf4",
+                  borderRadius: "10px",
+                  padding: "14px",
+                }}
+              >
+                <strong style={{ color: "#15803d" }}>0</strong>
+                <div>The value stored inside the variable.</div>
+              </div>
+            </div>
+
+            <p>Later, the score can change:</p>
+
+            <div
+              style={{
+                background: "#f4f4f4",
+                borderRadius: "12px",
+                padding: "18px 22px",
+                margin: "18px 0",
+                fontSize: "22px",
+                fontWeight: "bold",
+                textAlign: "center",
+                fontFamily: "monospace",
+              }}
+            >
+              <span style={{ color: "#1d4ed8" }}>score</span> ={" "}
+              <span style={{ color: "#15803d" }}>10</span>;
+            </div>
+
+            <p
+              style={{
+                fontWeight: "bold",
+                background: "#fff7ed",
+                padding: "14px 18px",
+                borderRadius: "10px",
+                marginTop: "20px",
+              }}
+            >
+              👉 Variables help our programs remember information that can
+              change, like a player&apos;s score, a character&apos;s size, or
+              the color of a shape.
+            </p>
+          </div>
           <hr
             style={{
               border: "0",
@@ -442,113 +663,173 @@ export default function LearnedPage() {
               margin: "30px 0",
             }}
           />
+          {/* Lesson 6 */}
+          <div style={{ marginTop: "30px" }}>
+            <h2
+              id="randomNumbers"
+              style={{
+                fontSize: "28px",
+                fontWeight: 800,
+                marginBottom: "16px",
+              }}
+            >
+              🎲 Lesson 6 — Random Numbers
+            </h2>
 
-          {/* The Play */}
-          <h2
-            id="play"
-            style={{ fontSize: "28px", fontWeight: 800, marginTop: "30px" }}
-          >
-            🎭 Inside the Computer — Our Classroom Play
-          </h2>
+            <p>
+              Sometimes we want our programs to look different each time they
+              run. In Game Lab, we can use <strong>randomNumber()</strong> to
+              let the computer choose a surprise number for us.
+            </p>
 
-          <p>
-            This was one of our favorite activities of the year! We performed a
-            whole play about what happens <strong>inside a computer</strong>.
-            Every student became a different computer part, and together we
-            acted out how information moves through a machine.
-          </p>
+            <p>
+              The computer needs to know the <strong>smallest</strong> and{" "}
+              <strong>largest</strong> numbers it can choose. For example:
+            </p>
 
-          <p>Our characters included:</p>
+            <div
+              style={{
+                background: "#f4f4f4",
+                borderRadius: "12px",
+                padding: "18px 22px",
+                margin: "18px 0",
+                fontSize: "22px",
+                fontWeight: "bold",
+                textAlign: "center",
+                fontFamily: "monospace",
+              }}
+            >
+              var <span style={{ color: "#1d4ed8" }}>x</span> = randomNumber(
+              <span style={{ color: "#15803d" }}>0</span>,{" "}
+              <span style={{ color: "#9333ea" }}>400</span>);
+            </div>
 
-          <ul style={{ paddingLeft: "25px" }}>
-            <li>
-              <strong>Narrator</strong> — tells the story and guides the scenes
-            </li>
-            <li>
-              <strong>Ms. Xu</strong> — the teacher; calm, encouraging, and wise
-            </li>
-            <li>
-              <strong>Mia</strong> — a curious and brave student
-            </li>
-            <li>
-              <strong>Ben</strong> — a confident coder, sometimes impatient
-            </li>
-            <li>
-              <strong>Sara</strong> — logical, observant, and great at noticing
-              mistakes
-            </li>
+            <p>
+              This code creates a variable called <strong>x</strong>. The
+              computer puts a random number from <strong>0 to 400</strong>{" "}
+              inside it.
+            </p>
 
-            <li>
-              <strong>Hardware</strong> — the strong “body” of the computer
-            </li>
-            <li>
-              <strong>Software</strong> — the smart “mind” of the computer
-            </li>
-            <li>
-              <strong>Input</strong> — energetic and chatty
-              (keyboard/microphone)
-            </li>
-            <li>
-              <strong>Output</strong> — expressive and dramatic (screen/speaker)
-            </li>
-            <li>
-              <strong>Processing</strong> — the calm, wise “brain” of the system
-            </li>
-            <li>
-              <strong>Storage</strong> — the careful librarian who keeps all
-              data safe
-            </li>
-            <li>
-              <strong>The Bug</strong> — the silly troublemaker who causes chaos
-            </li>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                gap: "12px",
+                margin: "18px 0 26px",
+              }}
+            >
+              <div
+                style={{
+                  background: "#eff6ff",
+                  borderRadius: "10px",
+                  padding: "14px",
+                  textAlign: "center",
+                }}
+              >
+                <strong style={{ color: "#1d4ed8" }}>x</strong>
+                <div style={{ marginTop: "6px" }}>Stores the random number</div>
+              </div>
 
-            <li>
-              <strong>Students (Ensemble)</strong> — classmates who travel
-              together inside the computer
-            </li>
-            <li>
-              <strong>Director / Slides Operator</strong> — manages the scene
-              changes and visuals
-            </li>
-          </ul>
+              <div
+                style={{
+                  background: "#f0fdf4",
+                  borderRadius: "10px",
+                  padding: "14px",
+                  textAlign: "center",
+                }}
+              >
+                <strong style={{ color: "#15803d" }}>0</strong>
+                <div style={{ marginTop: "6px" }}>Smallest possible number</div>
+              </div>
 
-          <p>
-            In the story, the whole class got sucked into a glowing computer
-            screen and had to work together to <strong>debug the system</strong>
-            . We traveled through Input Island, Output Ocean, and the land of
-            Processing while hunting for the Bug hiding in our code.
-          </p>
+              <div
+                style={{
+                  background: "#faf5ff",
+                  borderRadius: "10px",
+                  padding: "14px",
+                  textAlign: "center",
+                }}
+              >
+                <strong style={{ color: "#9333ea" }}>400</strong>
+                <div style={{ marginTop: "6px" }}>Largest possible number</div>
+              </div>
+            </div>
 
-          <p>
-            The big moment came when we found a mistake in a function:
-            <em>“exitDoor = CLOSED”</em> — which caused the system to break!
-            Students worked together to fix the variable, run the function
-            again, and restore the computer.
-          </p>
+            <p>
+              We can use random numbers to place shapes in surprise spots on the
+              canvas:
+            </p>
 
-          <p style={{ fontWeight: "bold", color: "#000", marginTop: "10px" }}>
-            Through this play, we learned how all the main parts of a computer
-            work together:
-          </p>
+            <div
+              style={{
+                background: "#f4f4f4",
+                borderRadius: "12px",
+                padding: "18px 22px",
+                margin: "18px 0",
+                fontSize: "20px",
+                fontWeight: "bold",
+                textAlign: "center",
+                fontFamily: "monospace",
+                lineHeight: "1.8",
+              }}
+            >
+              var x = randomNumber(0, 400);
+              <br />
+              var y = randomNumber(0, 400);
+              <br />
+              ellipse(x, y, 30, 30);
+            </div>
 
-          <ul style={{ paddingLeft: "25px" }}>
-            <li>
-              💡 <strong>Input</strong> brings information INTO the computer
-            </li>
-            <li>
-              🧠 <strong>Processing</strong> thinks and follows instructions
-            </li>
-            <li>
-              📦 <strong>Storage</strong> saves data for later
-            </li>
-            <li>
-              🖥️ <strong>Output</strong> shows the results
-            </li>
-            <li>
-              🔧 And <strong>code</strong> must be correct, organized, and
-              debugged!
-            </li>
-          </ul>
+            <p style={{ fontWeight: "bold", marginBottom: "12px" }}>
+              This code could create many different results:
+            </p>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "10px",
+                flexWrap: "wrap",
+                margin: "16px 0 22px",
+              }}
+            >
+              {lesson6Images.map((src, index) => (
+                <Image
+                  key={src}
+                  src={src}
+                  alt={`Possible random output ${index + 1}`}
+                  width={140}
+                  height={140}
+                  style={{
+                    width: "110px",
+                    height: "auto",
+                    borderRadius: "8px",
+                    border: "1px solid #e5e7eb",
+                  }}
+                  unoptimized
+                />
+              ))}
+            </div>
+
+            <p>
+              Each time the program runs, the circle may appear in a new place
+              because <strong>x</strong> and <strong>y</strong> can get
+              different random numbers.
+            </p>
+
+            <p
+              style={{
+                fontWeight: "bold",
+                background: "#fff7ed",
+                padding: "14px 18px",
+                borderRadius: "10px",
+                marginTop: "20px",
+              }}
+            >
+              👉 Random numbers make our programs surprising and fun! They can
+              help us make different designs each time we press Run.
+            </p>
+          </div>
           <hr
             style={{
               border: "0",
@@ -556,7 +837,6 @@ export default function LearnedPage() {
               margin: "30px 0",
             }}
           />
-
           {/* Robot Faces Final Project */}
           <h2
             id="robot-faces"
@@ -564,18 +844,15 @@ export default function LearnedPage() {
           >
             🤖 Robot Faces — Final Project
           </h2>
-
           <p>
             For our final Code.org project, we created{" "}
             <strong>Robot Faces</strong> in Game Lab! Students designed their
             own robot character and showed off both coding skills and
             creativity.
           </p>
-
           <p style={{ fontWeight: "bold", color: "#000", marginTop: "10px" }}>
             Project Requirements:
           </p>
-
           <ul style={{ paddingLeft: "25px" }}>
             <li>
               ✅ Use <strong>3 unique commands</strong> (for example:{" "}
@@ -589,13 +866,17 @@ export default function LearnedPage() {
               <code>robotColor</code>)
             </li>
             <li>
+              ✅ Use <strong>randomNumber()</strong> at least once to add a
+              surprise element, such as a random color, shape size, or position
+            </li>
+            <li>
               ✅ Make it with <strong>creativity</strong> — unique styles, fun
               colors, interesting expressions, and cool details!
             </li>
             <li>
               See the projects here:{" "}
               <Link
-                href="https://escsisthebest.vercel.app/projects"
+                href="https://argenziano-is-the-goat.vercel.app/projects"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={handyLinkStyle}
@@ -604,7 +885,6 @@ export default function LearnedPage() {
               </Link>
             </li>
           </ul>
-
           <hr
             style={{
               border: "0",
@@ -612,6 +892,164 @@ export default function LearnedPage() {
               margin: "30px 0",
             }}
           />
+          {/* Micro:bit Unit */}
+          <div style={{ marginTop: "40px" }}>
+            <h2
+              id="microbit"
+              style={{
+                fontSize: "32px",
+                fontWeight: 800,
+                marginBottom: "8px",
+              }}
+            >
+              🤖 Unit 2 — Exploring the Micro:bit
+            </h2>
+
+            <p
+              style={{
+                fontSize: "18px",
+                fontWeight: "bold",
+                color: "#374151",
+                marginTop: "0",
+                marginBottom: "22px",
+              }}
+            >
+              Computers are everywhere — even in places we may not expect!
+            </p>
+
+            <div>
+              <p>
+                We started our new unit by learning about the{" "}
+                <strong>Micro:bit</strong>, a tiny computer that we can program
+                to respond, light up, and interact with the world around us.
+              </p>
+
+              <p>
+                At first, we might think a computer has to be a laptop, desktop,
+                or tablet. But computers can also be found inside many everyday
+                objects. A computer is a device that can follow instructions,
+                take in information, and produce an output. The Micro:bit helped
+                us see that computers do not have to be big.
+              </p>
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                margin: "24px 0",
+              }}
+            >
+              <Image
+                src="/images/microbit.png"
+                alt="Diagram showing parts of the Micro:bit"
+                width={500}
+                height={500}
+                style={{
+                  width: "80%",
+                  maxWidth: "650px",
+                  height: "auto",
+                  borderRadius: "12px",
+                  border: "2px solid #e5e7eb",
+                  padding: "10px",
+                }}
+                unoptimized
+              />
+            </div>
+
+            <div
+              style={{
+                background: "#eff6ff",
+                borderRadius: "12px",
+                padding: "18px 22px",
+                margin: "22px 0",
+              }}
+            >
+              <p style={{ fontWeight: "bold", marginTop: 0 }}>
+                💡 We asked: What counts as a computer?
+              </p>
+
+              <p style={{ marginBottom: 0 }}>
+                Not only are they are laptops, they can be inside traffic
+                lights, video game controllers, watches, cars, washing machines,
+                toys, and many other devices we use every day.
+              </p>
+            </div>
+
+            <h3
+              style={{
+                fontSize: "22px",
+                fontWeight: 700,
+                marginTop: "28px",
+                marginBottom: "14px",
+              }}
+            >
+              What We Learned About the Micro:bit
+            </h3>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                gap: "12px",
+                margin: "18px 0",
+              }}
+            >
+              <div
+                style={{
+                  background: "#f0fdf4",
+                  borderRadius: "10px",
+                  padding: "16px",
+                  textAlign: "center",
+                }}
+              >
+                <div style={{ fontSize: "28px", marginBottom: "8px" }}>🧠</div>
+                <strong>Tiny Computer</strong>
+                <div style={{ marginTop: "6px" }}>
+                  It follows the code that we create.
+                </div>
+              </div>
+
+              <div
+                style={{
+                  background: "#fff7ed",
+                  borderRadius: "10px",
+                  padding: "16px",
+                  textAlign: "center",
+                }}
+              >
+                <div style={{ fontSize: "28px", marginBottom: "8px" }}>💡</div>
+                <strong>Lights &amp; Buttons</strong>
+                <div style={{ marginTop: "6px" }}>
+                  It can display images and respond when we press buttons.
+                </div>
+              </div>
+
+              <div
+                style={{
+                  background: "#faf5ff",
+                  borderRadius: "10px",
+                  padding: "16px",
+                  textAlign: "center",
+                }}
+              >
+                <div style={{ fontSize: "28px", marginBottom: "8px" }}>🧩</div>
+                <strong>MakeCode</strong>
+                <div style={{ marginTop: "6px" }}>
+                  We used blocks to build programs for our Micro:bit.
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <hr
+            style={{
+              border: "0",
+              borderTop: "4px solid #333",
+              margin: "30px 0",
+            }}
+          />
+
           {/* Other Topics */}
           <h2
             id="other"
@@ -619,7 +1057,6 @@ export default function LearnedPage() {
           >
             🌍 Other Things We Learned
           </h2>
-
           <ul style={{ paddingLeft: "25px" }}>
             {/* Jobs in Tech */}
             <li>
@@ -653,23 +1090,6 @@ export default function LearnedPage() {
               }}
             />
 
-            {/* Digital Tools & Skills */}
-            <li>
-              How to make music using{" "}
-              <a
-                href="https://soundation.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: "#0070f3",
-                  textDecoration: "underline",
-                  fontWeight: "bold",
-                }}
-              >
-                Soundation
-              </a>{" "}
-            </li>
-
             <li>
               How to improve typing speed on{" "}
               <a
@@ -685,8 +1105,7 @@ export default function LearnedPage() {
                 Typing Cat
               </a>{" "}
               — practicing accuracy, finger placement, and WPM (words per
-              minute). Adrian reached <strong>48 WPM</strong> — try and beat
-              this record!
+              minute).
             </li>
 
             <hr
